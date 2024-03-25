@@ -1,0 +1,5 @@
+arquivo_escrita = open("dados1.txt", "w")
+arquivo_escrita.write("Conteudo da primeira linha.")
+arquivo_escrita.write("\nConteudo da segunda linha, ei.")
+arquivo_escrita.write("\nConteudo da terceira linha, opa.")
+arquivo_escrita.close()
