@@ -2,7 +2,7 @@ import sqlite3 as conector
 
 try:
     # Abertura de conexao e aquisição de cursor
-    conexao = conector.connect('meu_banco.db')
+    conexao = conector.connect('bancao.db')
     cursor = conexao.cursor()
     
     # Execução de um comando: SELECT... CREATE...
