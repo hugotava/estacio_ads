@@ -1,0 +1,20 @@
+import psycopg2 # Interface com Banco de Dados PostgreSQL
+conn = psycopg2.connect(database = "postgres", user="postgres" , password="0000" , host="127.0.0.1" , port="5432" ) # LEMBRAR SENHA
+print ("Conexão com o Banco de Dados aberta com sucesso!") 
+cur=conn.cursor() 
+print("Consulta antes da atualização") 
+cur.execute("""SELECT * FROM public."agenda" WHERE "id"=1""") 
+registro=cur.fetchone() 
+print(registro) 
+#Atualização de um único registro 
+cur.execute("""UPDATE public."agenda" SET "telefone"='021988888888' WHERE "id"=1""") 
+conn.commit() 
+print("Registro Atualizado com sucesso! ")
+cur = conn.cursor()
+print(" Consulta depois da atualização") 
+cur.execute("""SELECT * FROM public."agenda" WHERE "id"=1""") 
+registro=cur.fetchone() 
+print(registro) 
+conn.commit() 
+print("Seleção realizada com sucesso!")
+conn.close()
