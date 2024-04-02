@@ -32,7 +32,7 @@ class AppBD:
             cursor = self.connection.cursor()
     
             print("Selecionando todos os produtos")
-            sql_select_query = """select * from public."PRODUTO" """
+            sql_select_query = """select * from public."produto" """
                     
             
             cursor.execute(sql_select_query)
@@ -57,7 +57,7 @@ class AppBD:
         try:
           self.abrirConexao()
           cursor = self.connection.cursor()
-          postgres_insert_query = """ INSERT INTO public."PRODUTO" 
+          postgres_insert_query = """ INSERT INTO public."produto" 
           ("CODIGO", "NOME", "PRECO") VALUES (%s,%s,%s)"""
           record_to_insert = (codigo, nome, preco)
           cursor.execute(postgres_insert_query, record_to_insert)
@@ -118,7 +118,7 @@ class AppBD:
             self.abrirConexao()    
             cursor = self.connection.cursor()    
             # Atualizar registro
-            sql_delete_query = """Delete from public."PRODUTO" 
+            sql_delete_query = """Delete from public."produto" 
             where "CODIGO" = %s"""
             cursor.execute(sql_delete_query, (codigo, ))
 
