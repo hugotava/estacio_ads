@@ -2,7 +2,7 @@
 
 int main()
 {
-    int matrix[3][4], line, colu, npar=0, nimpar=0;
+    int matrix[3][4], line, colu, npar=0, nimpar=0, fim=0;
     printf("\nDigite o valor para os elementos da matriz\n\n");
     for (line=0; line<3; line++) {
         for (colu=0; colu<4; colu++) {
@@ -10,7 +10,7 @@ int main()
             scanf("%d", &matrix[line][colu]);
         }
     }
-    printf("\n\n******************** Saída de dados ******************** \n\n");
+    printf("\n\n ***** Contagem de numeros pares e impares ***** \n\n");
     for (line=0; line<3; line++) {
         for (colu=0; colu<4; colu++) {
             if (matrix[line][colu]%2==0) {
@@ -22,5 +22,6 @@ int main()
     }
     printf("\nPares: %d ", npar);
     printf("\nImpares: %d ", nimpar);
+    scanf("\n%d", &fim);
     return(0);
 }
